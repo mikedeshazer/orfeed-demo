@@ -68,7 +68,13 @@ export default {
 			return ['USD', 'EUR', 'JPY'];
 		},
 		rate() {
-			return 0;
+			if (this.loading) {
+				return 'loading...';
+			}
+			const inputAmount = parseFloat(this.inputAmount);
+			const outputAmount = parseFloat(this.outputAmount);
+			const rate = outputAmount / inputAmount;
+			return rate;
 		}
 	}
 }
