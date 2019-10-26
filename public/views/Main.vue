@@ -18,7 +18,6 @@
 				</select>
 				<span>{{ outputAmount }}</span>
 			</div>
-			
 		</div>
 	</div>
 </template>
