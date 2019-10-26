@@ -18,7 +18,7 @@
 						</option>
 					</select>
 					<span id="output-amount">
-						<span v-if="loading">loading...</span>
+						<span v-if="loading">loading…</span>
 						<span v-else>{{ outputAmount }}</span>
 					</span>
 				</div>
@@ -69,7 +69,7 @@ export default {
 		},
 		rate() {
 			if (this.loading) {
-				return 'loading...';
+				return 'loading…';
 			}
 			const inputAmount = parseFloat(this.inputAmount);
 			const outputAmount = parseFloat(this.outputAmount);
