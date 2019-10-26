@@ -3,11 +3,19 @@
 		<h1>OrFeed</h1>
 		<div id="params">
 			<div id="input">
-				<input v-model="inputAsset">
+				<select v-model="inputAsset">
+					<option>USD</option>
+					<option>EUR</option>
+					<option>JPY</option>
+				</select>
 				<input v-model="inputAmount">
 			</div>
 			<div id="output">
-				<input v-model="outputAsset">
+				<select v-model="outputAsset">
+					<option>USD</option>
+					<option>EUR</option>
+					<option>JPY</option>
+				</select>
 				<span>{{ outputAmount }}</span>
 			</div>
 			
