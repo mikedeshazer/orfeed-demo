@@ -41,9 +41,9 @@ const provider = new ethers.providers.InfuraProvider('homestead', infuraId);
 export default {
 	data() {
 		return {
-			inputAsset: 'JPY',
-			outputAsset: 'USD',
-			inputAmount: '100000',
+			inputAsset: 'USD',
+			outputAsset: 'JPY',
+			inputAmount: '50',
 			outputAmount: '0',
 			loading: false,
 		}
