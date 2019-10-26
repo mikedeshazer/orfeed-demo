@@ -3,14 +3,6 @@
 		<div id="left">
 		</div>
 		<div id="center">
-			<div class="nav-bar">
-				<div>
-					<div class="nav-option">
-						<router-link to="/">Main</router-link>
-					</div>
-				</div>
-			</div>
-			<br>
 			<router-view/>
 		</div>
 		<div id="right">
