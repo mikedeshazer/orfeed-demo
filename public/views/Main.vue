@@ -77,7 +77,7 @@ export default {
 }
 
 #output {
-	margin-left: 2em;
+	margin-left: 4em;
 }
 
 #output-amount {
