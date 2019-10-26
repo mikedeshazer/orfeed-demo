@@ -4,17 +4,17 @@
 		<div id="params">
 			<div id="input">
 				<select v-model="inputAsset">
-					<option>USD</option>
-					<option>EUR</option>
-					<option>JPY</option>
+					<option v-for="asset in assets">
+						{{ asset }}
+					</option>
 				</select>
 				<input v-model="inputAmount">
 			</div>
 			<div id="output">
 				<select v-model="outputAsset">
-					<option>USD</option>
-					<option>EUR</option>
-					<option>JPY</option>
+					<option v-for="asset in assets">
+						{{ asset }}
+					</option>
 				</select>
 				<span>{{ outputAmount }}</span>
 			</div>
@@ -38,6 +38,11 @@ export default {
 			outputAmount: '0',
 		}
 	},
+	computed: {
+		assets() {
+			return ['USD', 'EUR', 'JPY'];
+		}
+	}
 }
 </script>
 
