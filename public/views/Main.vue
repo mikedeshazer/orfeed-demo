@@ -55,7 +55,7 @@ export default {
 		async loadOutputAmount() {
 			this.loading = true;
 			const orfeed = new ethers.Contract(orfeedAddress, orfeedAbi, provider);
-			const rate = await orfeed.getExchangeRate("JPY", "USD", '', this.inputAmount);
+			const rate = await orfeed.getExchangeRate(this.inputAsset, this.outputAsset, '', this.inputAmount);
 			this.loading = false;
 			this.outputAmount = rate.toString();
 		},
