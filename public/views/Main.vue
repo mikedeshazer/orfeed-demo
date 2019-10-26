@@ -25,6 +25,10 @@
 <script>
 import { ethers } from 'ethers';
 
+import orfeedAbi from '../abi/orfeed.json';
+
+const orfeedAddress = '0x298E0d904954E5076b1836937cB3B3527Adf8783';
+
 const infuraId = '202f7e63f7924de1b214ec587219d93d';
 const provider = new ethers.providers.InfuraProvider('homestead', infuraId);
 
@@ -45,6 +49,9 @@ export default {
 			this.loadOutputAmount();
 		},
 		async loadOutputAmount() {
+			const orfeed = new ethers.Contract(orfeedAddress, orfeedAbi, provider);
+			const rate = await orfeed.getExchangeRate("JPY", "USD", '', 100000);
+			this.outputAmount = rate.toString();
 		},
 	},
 	computed: {
