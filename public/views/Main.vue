@@ -65,7 +65,7 @@ export default {
 	},
 	computed: {
 		assets() {
-			return ['USD', 'EUR', 'JPY'];
+			return ['USD', 'EUR', 'CHF', 'JPY', 'GBP'];
 		},
 		rate() {
 			if (this.loading) {
