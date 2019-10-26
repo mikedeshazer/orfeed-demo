@@ -16,7 +16,7 @@
 						{{ asset }}
 					</option>
 				</select>
-				<span>{{ outputAmount }}</span>
+				<span id="output-amount">{{ outputAmount }}</span>
 			</div>
 		</div>
 	</div>
@@ -65,6 +65,9 @@ export default {
 <style scoped>
 #params {
 	display: flex;
+	height: 70vh;
+	justify-content: center;
+	align-items: center;
 }
 
 #input,
@@ -77,11 +80,17 @@ export default {
 	margin-left: 2em;
 }
 
+#output-amount {
+	margin-top: 2px;
+}
+
 select {
-	width: 64px;
+	width: 80px;
+	font-size: 18px;
 }
 
 input {
-	width: 64px;
+	width: 80px;
+	font-size: 18px;
 }
 </style>
