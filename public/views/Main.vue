@@ -3,15 +3,15 @@
 		<h1>OrFeed Demo</h1>
 		<div id="params">
 			<div id="input">
-				<select v-model="inputAsset">
+				<select v-model="inputAsset" @change="inputChanged">
 					<option v-for="asset in assets">
 						{{ asset }}
 					</option>
 				</select>
-				<input v-model="inputAmount">
+				<input v-model="inputAmount" @input="inputChanged">
 			</div>
 			<div id="output">
-				<select v-model="outputAsset">
+				<select v-model="outputAsset" @change="inputChanged">
 					<option v-for="asset in assets">
 						{{ asset }}
 					</option>
@@ -36,6 +36,16 @@ export default {
 			inputAmount: '100000',
 			outputAmount: '0',
 		}
+	},
+	mounted() {
+		this.loadOutputAmount();
+	},
+	methods: {
+		inputChanged() {
+			this.loadOutputAmount();
+		},
+		async loadOutputAmount() {
+		},
 	},
 	computed: {
 		assets() {
