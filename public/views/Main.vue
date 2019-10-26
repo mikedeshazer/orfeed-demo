@@ -1,26 +1,29 @@
 <template>
 	<div>
 		<h1>OrFeed Demo</h1>
-		<div id="params">
-			<div id="input">
-				<select v-model="inputAsset" @change="inputChanged">
-					<option v-for="asset in assets">
-						{{ asset }}
-					</option>
-				</select>
-				<input v-model="inputAmount" @input="inputChanged">
+		<div id="main">
+			<div id="params">
+				<div id="input">
+					<select v-model="inputAsset" @change="inputChanged">
+						<option v-for="asset in assets">
+							{{ asset }}
+						</option>
+					</select>
+					<input v-model="inputAmount" @input="inputChanged">
+				</div>
+				<div id="output">
+					<select v-model="outputAsset" @change="inputChanged">
+						<option v-for="asset in assets">
+							{{ asset }}
+						</option>
+					</select>
+					<span id="output-amount">
+						<span v-if="loading">loading...</span>
+						<span v-else>{{ outputAmount }}</span>
+					</span>
+				</div>
 			</div>
-			<div id="output">
-				<select v-model="outputAsset" @change="inputChanged">
-					<option v-for="asset in assets">
-						{{ asset }}
-					</option>
-				</select>
-				<span id="output-amount">
-					<span v-if="loading">loading...</span>
-					<span v-else>{{ outputAmount }}</span>
-				</span>
-			</div>
+			<div id="rate">Rate: {{ rate }}</div>
 		</div>
 	</div>
 </template>
@@ -63,17 +66,29 @@ export default {
 	computed: {
 		assets() {
 			return ['USD', 'EUR', 'JPY'];
+		},
+		rate() {
+			return 0;
 		}
 	}
 }
 </script>
 
 <style scoped>
+#main {
+	height: 70vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
 #params {
 	display: flex;
-	height: 70vh;
-	justify-content: center;
-	align-items: center;
+}
+
+#rate {
+	margin-top: 32px;
 }
 
 #input,
@@ -87,7 +102,7 @@ export default {
 }
 
 #output-amount {
-	margin-top: 2px;
+	margin-top: 4px;
 }
 
 select {
