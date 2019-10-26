@@ -59,4 +59,12 @@ export default {
 #output {
 	margin-left: 2em;
 }
+
+select {
+	width: 64px;
+}
+
+input {
+	width: 64px;
+}
 </style>
