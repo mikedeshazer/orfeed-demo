@@ -16,7 +16,10 @@
 						{{ asset }}
 					</option>
 				</select>
-				<span id="output-amount">{{ outputAmount }}</span>
+				<span id="output-amount">
+					<span v-if="loading">loading...</span>
+					<span v-else>{{ outputAmount }}</span>
+				</span>
 			</div>
 		</div>
 	</div>
@@ -39,6 +42,7 @@ export default {
 			outputAsset: 'USD',
 			inputAmount: '100000',
 			outputAmount: '0',
+			loading: false,
 		}
 	},
 	mounted() {
@@ -49,8 +53,10 @@ export default {
 			this.loadOutputAmount();
 		},
 		async loadOutputAmount() {
+			this.loading = true;
 			const orfeed = new ethers.Contract(orfeedAddress, orfeedAbi, provider);
 			const rate = await orfeed.getExchangeRate("JPY", "USD", '', this.inputAmount);
+			this.loading = false;
 			this.outputAmount = rate.toString();
 		},
 	},
