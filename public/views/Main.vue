@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h1>OrFeed</h1>
+		<h1>OrFeed Demo</h1>
 		<div id="params">
 			<div id="input">
 				<select v-model="inputAsset">
