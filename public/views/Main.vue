@@ -25,6 +25,12 @@
 			</div>
 			<div id="rate">Rate: {{ rate }}</div>
 		</div>
+		<div id="footer">
+			Links:&nbsp
+			<a href="https://github.com/Destiner/orfeed-demo">github</a>,&nbsp
+			<a href="https://www.orfeed.org/">website</a>,&nbsp
+			<a href="https://www.orfeed.org/docs/">docs</a>.
+		</div>
 	</div>
 </template>
 
@@ -82,10 +88,15 @@ export default {
 
 <style scoped>
 #main {
-	height: 70vh;
+	height: 80vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
+}
+
+#footer {
+	display: flex;
 	justify-content: center;
 }
 
